@@ -1,0 +1,195 @@
+@use "variables" as var;
+@import "animations";
+
+@mixin paragraph($color: var.$opaque-black) {
+  font-size: max(0.9rem, 1.2vw);
+  line-height: 1.5;
+  margin: 0.5em 0;
+  color: $color;
+}
+
+@mixin nav-link($color: var.$black) {
+  text-transform: capitalize;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+  padding: 0.5rem 0.1rem;
+  margin: 0 0.5rem;
+
+  &:not(.active):hover {
+    color: $color;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    background-color: var.$orange;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    border-radius: 2px;
+    transition: width 0.3s ease-in-out 0.5s;
+  }
+
+  &.active {
+    color: $color;
+  }
+
+  &.active::after {
+    width: 100%;
+  }
+
+  &.active:hover::after {
+    animation: activeLinkHover 0.5s ease-in-out;
+  }
+}
+
+@mixin price($color: var.$black) {
+  font-weight: bold;
+  line-height: 1.25;
+  color: $color;
+}
+
+@mixin orange-btn {
+  background: var.$orange;
+  color: var.$white;
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.7em 1.5em;
+  font-size: max(1rem, 1.2vw);
+  font-weight: 600;
+  line-height: 1.25;
+  text-transform: capitalize;
+  text-align: center;
+  width: max-content;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    opacity: 0.8;
+    box-shadow: -3px 3px 15px 4px #00000060;
+  }
+  &:active {
+    animation: pushdown 0.1s ease 0s both;
+  }
+}
+
+.manrope {
+  font-family: var.$manrope;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.open-sans {
+  font-family: var.$open-sans;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.heading {
+  font-weight: bold;
+  font-size: max(1.7rem, 3vw);
+  line-height: 1.25;
+  //   letter-spacing: 1px;
+  margin: 0.5em 0;
+  color: var.$black;
+}
+
+.darkMode {
+  .heading {
+    color: var.$white;
+  }
+
+  .paragraph {
+    @include paragraph(var.$opaque-white);
+  }
+
+  .card-price {
+    @include price(var.$white);
+  }
+  .card-discount {
+    color: var.$opaque-white;
+  }
+
+  .item-counter {
+    color: var.$white;
+  }
+
+  .cart-title {
+    color: var.$white;
+  }
+  .cart-paragraph {
+    @include paragraph(var.$white);
+  }
+  .cart-price {
+    @include price(var.$white);
+  }
+}
+
+.subheading {
+  font-size: max(0.9rem, 1.2vw);
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0.2em 0;
+  color: var.$orange;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.paragraph {
+  @include paragraph(var.$opaque-black);
+}
+
+.card-price {
+  @include price;
+  font-size: max(1.3rem, 2vw);
+  margin: 0.5em 0;
+}
+
+.card-discount-rate {
+  font-size: max(0.9rem, 1.2vw);
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0.5em 0;
+  color: var.$orange;
+}
+
+.card-discount {
+  font-size: max(0.9rem, 1.2vw);
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0.5em 0;
+  color: var.$opaque-black;
+  text-decoration: line-through;
+}
+
+.item-counter {
+  font-size: max(1rem, 1.2vw);
+  font-weight: 900;
+  line-height: 1.25;
+  margin: 0.5em 0;
+  color: var.$black;
+}
+
+.cart-title {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.25;
+  text-transform: capitalize;
+  margin: 0.5em 0;
+  color: var.$black;
+}
+
+.cart-paragraph {
+  @include paragraph;
+  text-transform: capitalize;
+}
+
+.cart-price {
+  @include price;
+  font-size: max(0.9rem, 1.2vw);
+}

@@ -1,0 +1,17 @@
+@keyframes pushdown {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes activeLinkHover {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

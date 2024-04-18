@@ -1,0 +1,27 @@
+$gradient-color: linear-gradient(
+  93deg,
+  rgba(223, 87, 188, 1) 0%,
+  rgba(254, 126, 27, 1) 100%
+);
+
+$white: #ddf8e8;
+$opaque-white: #ddf8e8af;
+$orange: #fe7e1b;
+$pink: #df57bc;
+$black: #2e2f32;
+$opaque-black: #2e2f32af;
+$blue: #7192be;
+$open-sans: "Open Sans", sans-serif;
+$manrope: "Manrope", sans-serif;
+
+body {
+  transition: background-color 0.4s ease-in;
+}
+.darkMode {
+  background-color: $black;
+  color: $white;
+  transition: background-color 0.4s ease-in;
+}
+.darkMode * {
+  transition: color 0.4s ease-in;
+}
