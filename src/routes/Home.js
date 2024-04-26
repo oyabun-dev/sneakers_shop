@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import shoes from '../assets/images/product/men/image-product-2-thumbnail.jpg';
+import Navbar from '../components/Navbar';
 
 export default function Home() {
     let theme = document.body.classList.contains('darkMode') ? 'Light Mode' : 'Dark Mode';
@@ -10,6 +12,7 @@ export default function Home() {
     }
     return (
         <main className='landing'>
+            <Navbar />
             <div className='heading'>Limited HomePage</div>
             <div className='subheading'>Limited HomePage</div>
             <p className="paragraph">This is a paragraph</p>
@@ -23,6 +26,7 @@ export default function Home() {
             <NavLink className="nav-link" to="/about">About</NavLink>
             <NavLink className="nav-link" to="/baba">yoo</NavLink>
             <NavLink className="nav-link" to="/">active</NavLink>
+            <img className='img-thumbnail active' src={shoes} alt="" />
             <button className='btn-orange' onClick={toggleMode}>{mode}</button>
         </main>
     )

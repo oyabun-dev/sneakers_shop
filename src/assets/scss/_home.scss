@@ -18,18 +18,6 @@
   @include orange-btn;
 }
 
-.nav-link {
-  @include paragraph;
-  @include nav-link;
-}
-
-.darkMode {
-  .nav-link {
-    @include paragraph(var.$opaque-white);
-    @include nav-link(var.$white);
-  }
-}
-
 // Baby amina coding 👶🏽😂
 // ... '[[[[[[[[[p]]]]]]]]]'efvrgvklo
 // .l;?

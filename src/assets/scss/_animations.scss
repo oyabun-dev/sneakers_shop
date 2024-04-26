@@ -15,3 +15,21 @@
     width: 100%;
   }
 }
+
+@keyframes showMenu {
+  0% {
+    width: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    width: 100%;
+    transform: none;
+  }
+}
+
+@keyframes hideMenu {
+  to {
+    width: 0;
+    transform: translateX(-100%);
+  }
+}

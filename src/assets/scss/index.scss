@@ -1,6 +1,10 @@
-@use "variables";
-@use "mixins";
+// utils
 @use "normalize";
+
+// components
+@use "navbar";
+
+// pages
 @use "home";
 @use "collections";
 @use "cart";

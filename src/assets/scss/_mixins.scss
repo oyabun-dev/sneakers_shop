@@ -1,6 +1,15 @@
 @use "variables" as var;
 @import "animations";
 
+@mixin thumbnail {
+  border-radius: 0.5em;
+  box-shadow: 0 0 10px 0 #00000060;
+}
+
+@mixin orange-border {
+  border: 2px solid var.$orange;
+}
+
 @mixin paragraph($color: var.$opaque-black) {
   font-size: max(0.9rem, 1.2vw);
   line-height: 1.5;
@@ -70,7 +79,6 @@
   transition: all 0.3s;
   &:hover {
     opacity: 0.8;
-    box-shadow: -3px 3px 15px 4px #00000060;
   }
   &:active {
     animation: pushdown 0.1s ease 0s both;
@@ -192,4 +200,17 @@
 .cart-price {
   @include price;
   font-size: max(0.9rem, 1.2vw);
+}
+
+.img-thumbnail {
+  @include thumbnail;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  z-index: 1;
+
+  // &.active {
+  //   @include orange-border;
+  //   background-color: #ffffff20;
+  // }
 }
